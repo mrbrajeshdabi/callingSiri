@@ -1,6 +1,6 @@
 /* This Read */ <br>
-<b> /* Insert CDN Your Html File </b> <br>
-<script src="https://cdn.jsdelivr.net/gh/mrbrajeshdabi/callingSiri@v1.0.3/dist/callingsiri.min.js"></script><br>
+<b> /* Insert CDN Your Html File */ </b> <br>
+<script src="https://cdn.jsdelivr.net/gh/mrbrajeshdabi/callingSiri@v1.0.3/dist/callingsiri.min.js"></script> <br>
 🚀 <b> let socket = io(); <b> <br>
 🤖 <b> let conn; </b> <br>
 -----------------------------
