@@ -1,6 +1,6 @@
 /* This Read */ <br>
 <b> /* Insert CDN Your Html File </b> <br>
-<span style="background-color:white; color:red;"> <script src="https://cdn.jsdelivr.net/gh/mrbrajeshdabi/callingSiri@v1.0.3/dist/callingsiri.min.js"></script> </span><br>
+<script src="https://cdn.jsdelivr.net/gh/mrbrajeshdabi/callingSiri@v1.0.3/dist/callingsiri.min.js"></script><br>
 🚀 <b> let socket = io(); <b> <br>
 🤖 <b> let conn; </b> <br>
 -----------------------------
@@ -26,7 +26,21 @@ conn.remoteStream((stream)=>{
 }); <br>
 👋🏻let answer = await conn.createAnswer(calling); <br>
 🚀socket.emit('send-answer',{from,to,answer});
-});
+}); <br> <br>
+
+-----------------------------------------------
+/* Server.Js Insert Socket and Copy This Text */
+-----------------------------------------------
+<br>
+socket.on('send-call',({from,to,calling})=>{
+        socket.to(to).emit('receive-call',{from,to,calling});
+    }); <br><br>
+socket.on('send-answer',({from,to,answer})=>{
+   socket.to(from).emit('receive-answer',{from,to,answer});
+}); <br><br>
+socket.on('candidate',(candidate)=>{
+   socket.broadcast.emit('candidate',candidate);
+}); <br><br>
 
 
     socket.emit('send-answer',{from,to,answer});
